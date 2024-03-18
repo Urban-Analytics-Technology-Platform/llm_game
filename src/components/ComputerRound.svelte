@@ -4,6 +4,23 @@
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
 
+	// From svelte particles: https://github.com/tsparticles/svelte
+	// Configs: for "particles_config.json": https://particles.js.org/samples/index.html
+	import Particles, { particlesInit } from '@tsparticles/svelte';
+	import { loadFull } from 'tsparticles';
+	// import { loadSlim } from '@tsparticles/slim';
+	export const particlesUrl = '';
+	// Read config from file
+	import * as particlesConfig from '../particles_config.json';
+
+	let onParticlesLoaded = (event: { detail: { particles: any } }) => {
+		const particlesContainer = event.detail.particles;
+	};
+
+	void particlesInit(async (engine) => {
+		await loadFull(engine);
+		// await loadSlim(engine);
+	});
 	interface RoundProps {
 		tiles: Array<TileType>;
 		round_complete?: boolean;
@@ -41,6 +58,15 @@
 	</div>
 	{#if round_complete}
 		<p>Computer got {correct_count} out of {current_order_guess.length}</p>
+		{#if roundNo == 3}
+			<Particles
+				id="tsparticles"
+				class="put your classes here"
+				style=""
+				options={particlesConfig}
+				on:particlesLoaded={onParticlesLoaded}
+			/>
+		{/if}
 	{/if}
 </div>
 

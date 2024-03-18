@@ -37,6 +37,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-dnd-action": "^0.9.40"
+		"@tsparticles/slim": "^3.3.0",
+		"@tsparticles/svelte": "^3.0.0",
+		"svelte-dnd-action": "^0.9.40",
+		"tsparticles": "^3.3.0"
 	}
 }
