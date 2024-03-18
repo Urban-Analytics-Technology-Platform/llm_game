@@ -31,7 +31,7 @@
 <div id="container" bind:this={containerEl}>
 	<h1>Are you smarter than a foundation model!</h1>
 
-	<p>Put the tiles in the order of increasing air polution</p>
+	<p>Put the tiles in the order of increasing air pollution</p>
 	{#each [0, 1, 2] as round}
 		{#if round <= current_round}
 			<Round

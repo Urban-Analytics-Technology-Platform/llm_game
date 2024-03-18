@@ -72,7 +72,7 @@
 		{:else if correct_count === current_order_guess.length}
 			<p>Wow! you got them all right</p>
 		{:else}
-			<p>Unfortuently you only got {correct_count} out of {current_order_guess.length}</p>
+			<p>Unfortunately you only got {correct_count} out of {current_order_guess.length}</p>
 		{/if}
 	</div>
 {:else}

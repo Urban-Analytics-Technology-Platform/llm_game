@@ -26,7 +26,7 @@
 </script>
 
 <div class="round" in:fade={{ delay: 1000, duration: 1000 }}>
-	<h1>Computers guess</h1>
+	<h1>Computer's guess</h1>
 	<div class="tiles">
 		{#each computer_guess as tile, index (tile.id)}
 			<div>
