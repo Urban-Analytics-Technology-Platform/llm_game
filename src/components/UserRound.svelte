@@ -69,7 +69,7 @@
 						file={tile.filename.replace('.tif', '.png')}
 						prediction={tile.prediction}
 						value={tile.air_pollution_index}
-                        predictedRank={index}
+                        predictedRank={index + 1}
                         actualRank={getCorrectRank(tile)}
 					/>
 				</div>
