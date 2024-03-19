@@ -46,7 +46,7 @@
 	}
 
     function getCorrectRank(tileId: string) {
-        return correct_order.findIndex((tid) => tid === tile.id);
+        return correct_order.findIndex((t) => t.id === tileId);
     }
 </script>
 
