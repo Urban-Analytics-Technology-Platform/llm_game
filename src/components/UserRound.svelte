@@ -4,7 +4,7 @@
 	import { dndzone } from 'svelte-dnd-action';
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 
 	interface RoundProps {
 		tiles: Array<TileType>;
@@ -19,7 +19,7 @@
 
 	let current_order_guess = $state<Array<TileType> | null>(null);
 
-	$effect(() => {
+	onMount(() => {
 		submitted = false;
 		current_order_guess = tiles.sort((t) => Math.random() - 0.5);
 	});
@@ -78,8 +78,8 @@
 						file={tile.filename.replace('.tif', '.png')}
 						prediction={tile.prediction}
 						value={tile.air_pollution_index}
-                        predictedRank={index}
-                        actualRank={getCorrectRank(tile.id)}
+                        			predictedRank={index}
+                       				actualRank={getCorrectRank(tile.id)}
 					/>
 				</div>
 			{/each}
