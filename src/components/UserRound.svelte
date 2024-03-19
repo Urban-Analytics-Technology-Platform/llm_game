@@ -23,6 +23,7 @@
 		submitted = false;
 		current_order_guess = tiles.sort((t) => Math.random() - 0.5);
 	});
+	$effect(() => {submitted = false;}});
 
 	let correct_order = $derived(
 		[...tiles].sort((a, b) => (a.air_pollution_index > b.air_pollution_index ? 1 : -1))
