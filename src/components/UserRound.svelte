@@ -46,7 +46,7 @@
 
 	function submit() {
 		submitted = true;
-		i = 0;
+		let i = 0;
 		for (const tile of current_order_guess) {
 			console.log("tile id", tile.id, "index", i, "correct rank", getCorrectRank(tile.id));
 			i = i + 1;
