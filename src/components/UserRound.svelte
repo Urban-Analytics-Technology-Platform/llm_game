@@ -83,6 +83,7 @@
 	<div>Loading...</div>
 {/if}
 
+
 <style>
 	div.tiles {
 		display: flex;
