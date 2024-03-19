@@ -40,14 +40,23 @@
 		current_order_guess = e.detail.items;
 	}
 
-	function submit() {
-		submitted = true;
-		dispatch('done', { score: correct_count });
-	}
-
     function getCorrectRank(tileId: string) {
         return correct_order.findIndex((t) => t.id === tileId);
     }
+
+	function submit() {
+		submitted = true;
+		i = 0;
+		for (const tile of current_order_guess) {
+			console.log("tile id", tile.id, "index", i, "correct rank", getCorrectRank(tile.id));
+			i = i + 1;
+		}
+		dispatch('done', { score: correct_count });
+	}
+
+	console.log("correct_order ids ", correct_order.map((t) => t.id));
+
+
 </script>
 
 {#if current_order_guess}
