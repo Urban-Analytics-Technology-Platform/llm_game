@@ -14,6 +14,7 @@
 <script lang="ts">
 	let { file, prediction, value, predictedRank, actualRank, showResult, showPrediction } = $props<TileProps>();
     let isCorrect = $state(predictedRank === actualRank);
+	console.log("predictedRank ", predictedRank, "actualRank ", actualRank);
 </script>
 
 <div class="tile">
